@@ -1,4 +1,4 @@
-asgiref @ file:///home/conda/feedstock_root/build_artifacts/asgiref_1605523041333/work
+asgiref==3.2.10
 certifi==2021.5.30
 dj-database-url==0.5.0
 Django @ file:///home/conda/feedstock_root/build_artifacts/django_1606808783925/work
