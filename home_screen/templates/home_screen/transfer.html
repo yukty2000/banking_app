@@ -1,0 +1,24 @@
+{% extends 'home_screen/base.html' %}
+{% block content %}
+	<h2>Transfer Money</h2><br>
+	<form method="POST">
+		{% csrf_token %}
+		<p> Sender: {{current_user.get_full_name}}</p>
+		<label for="receiver">Receiver:</label>
+
+		<select name="receiver" id="receiver">
+			{% for user in customers %}
+				{% if user.id != current_user.id %}
+					<option value="{{user.id}}">{{user.get_full_name}}</option>
+				{% endif %}
+			{% endfor %}
+		</select>
+		<label for="amount">Amount:</label>
+		<select name="amount" id="amount">
+			{% for amount in amount_list %}
+				<option value="{{amount}}">{{amount}}</option>
+			{% endfor %}
+		</select><br><br>
+		<button class="btn btn-outline-info" type="submit">Transfer</button>
+	</form>
+{% endblock content %}

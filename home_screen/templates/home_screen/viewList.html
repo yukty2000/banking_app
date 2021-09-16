@@ -1,0 +1,12 @@
+{% extends 'home_screen/base.html' %}
+{% block content %}
+	<h2>List of Customers :</h2><br>
+	<ol>
+		{% for customer in customers %}
+			<li>		 
+				<!--<p>{{customer.id}}</p>-->
+				<a href="{% url 'user-detail' customer.id %}">{{customer.get_full_name}}</a>
+			</li>		
+		{% endfor %}
+	</ol> 
+{% endblock content %}
